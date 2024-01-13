@@ -7,30 +7,33 @@ const dropdown = document.querySelectorAll(".submenu .dropdown-btn");
 const dropdownIcon = document.querySelectorAll(".submenu .dropdown-btn i");
 const dropdownContent = document.querySelectorAll(".submenu .dropdown-content");
 
-const stickyNav = function (entries) {
-	const [entry] = entries;
-	if (!entry.isIntersecting) {
-		navbar.classList.add("fixed-top", "bg-white");
-		brand.classList.remove("text-white");
-		navbar.style.boxShadow = "0 0 15px #d1d1d1";
-		for (let i = 0; i < navlink.length; i++) {
-			navlink[i].classList.remove("text-white");
+const stickyNav = (entries, observer) => {
+	entries.forEach((entry) => {
+		if (!entry.isIntersecting) {
+			navbar.classList.add("fixed-top", "bg-white");
+			brand.classList.remove("text-white");
+			navbar.style.boxShadow = "0 0 15px #d1d1d1";
+			for (let i = 0; i < navlink.length; i++) {
+				navlink[i].classList.remove("text-white");
+			}
+		} else {
+			navbar.classList.remove("fixed-top", "bg-white");
+			brand.classList.add("text-white");
+			navbar.style.boxShadow = "none";
+			for (let i = 0; i < navlink.length; i++) {
+				navlink[i].classList.add("text-white");
+			}
 		}
-	} else {
-		navbar.classList.remove("fixed-top", "bg-white");
-		brand.classList.add("text-white");
-		navbar.style.boxShadow = "none";
-		for (let i = 0; i < navlink.length; i++) {
-			navlink[i].classList.add("text-white");
-		}
-	}
+	});
 };
 
-const headerObserver = new IntersectionObserver(stickyNav, {
+const options = {
 	root: null,
 	threshold: 0,
 	rootMargin: `-${navHeight}px`,
-});
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, options);
 
 headerObserver.observe(header);
 

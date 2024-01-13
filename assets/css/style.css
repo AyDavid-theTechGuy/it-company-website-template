@@ -60,13 +60,13 @@ button {
 	background-color: #135aa1;
 }
 
-.offcanvas-view {
+.offcanvas-nav {
 	font-family: "Work Sans", sans-serif;
 	font-size: 15px;
 	font-weight: 500;
 }
 
-.offcanvas-view h5 {
+.offcanvas-nav h5 {
 	background-color: #135aa1;
 	color: white;
 	border-radius: 4px;
@@ -76,12 +76,12 @@ button {
 	letter-spacing: 2px;
 }
 
-.offcanvas-view .menu-sect {
+.offcanvas-nav .menu-sect {
 	border-bottom: solid 1px #d1d1d1;
-	padding: 12px 0;
+	padding: 14px 0;
 }
 
-.offcanvas-view .g-i-t {
+.offcanvas-nav .g-i-t {
 	padding: 12px 0;
 }
 
@@ -115,18 +115,18 @@ button {
 	background-color: whitesmoke;
 	position: absolute;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	border-radius: 3px;
+	border-radius: 1px;
 	z-index: 1;
 }
 
-.offcanvas-view .dropdown-content {
+.offcanvas-nav .dropdown-content {
 	position: relative;
 }
 
 .navbar-nav .dropdown-content li a,
-.offcanvas-view .dropdown-content li a {
+.offcanvas-nav .dropdown-content li a {
 	color: #494949;
-	font-size: 14px;
+	font-size: 15px;
 	padding: 10px 12px;
 	text-decoration: none;
 	display: block;
@@ -134,18 +134,14 @@ button {
 }
 
 .navbar-nav .dropdown-content li a:hover,
-.offcanvas-view .dropdown-content li a:hover {
+.offcanvas-nav .dropdown-content li a:hover {
 	background-color: #135aa1;
 	color: whitesmoke;
-	border-radius: 3px;
+	border-radius: 2px;
 }
 
 .show {
 	display: block;
-}
-
-.hide {
-	display: none;
 }
 
 /* Hero Section */
@@ -575,13 +571,19 @@ footer {
 
 /* Media Queries */
 
+@media screen and (max-width: 354px) {
+	.hero h1 {
+		font-size: 25px;
+	}
+}
+
 @media screen and (max-width: 576px) {
 	.navbar {
 		padding: 10px 7px;
 	}
 
 	.hero {
-		padding: 12vh 7px 0 7px;
+		padding: 5vh 7px 0 7px;
 	}
 
 	.services .serviceCard {
@@ -719,5 +721,34 @@ footer {
 
 	.footer .links h5 {
 		padding-bottom: 5px;
+	}
+}
+
+@media screen and (max-width: 976px) {
+	.navbar-nav {
+		display: none;
+	}
+
+	.menu {
+		display: block;
+	}
+
+	.offcanvas-nav {
+		display: block;
+	}
+}
+
+@media screen and (min-width: 977px) {
+	.navbar-nav {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.menu {
+		display: none;
+	}
+
+	.offcanvas-nav {
+		display: none;
 	}
 }
