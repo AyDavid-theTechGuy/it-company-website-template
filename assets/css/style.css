@@ -21,7 +21,7 @@ button {
 
 .header {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(31, 44, 62, 0.7)),
-		url("/assets/img/tech1.png");
+		url("../img/tech1.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 90vh;
@@ -80,10 +80,6 @@ button {
 	border-bottom: solid 1px #d1d1d1;
 	padding: 12px 0;
 }
-
-/* .offcanvas-view .menu-sect a {
-	color: #373737;
-} */
 
 .offcanvas-view .g-i-t {
 	padding: 12px 0;
